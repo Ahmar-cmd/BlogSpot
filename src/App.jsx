@@ -1,16 +1,14 @@
 import './App.css'
-import { useDispatch } from 'react-redux';
 import React,{ useEffect , useState } from 'react';
-import { login, logout } from './store/authSlice';
-import authService from './appwrite/auth';
-import { Header,Footer } from './components';
 import { Outlet } from 'react-router-dom';
-// cd 12MegaBlog
-// npm run dev
+import { useDispatch } from 'react-redux';
+import { login, logout } from './store/authSlice';
+import { Header,Footer } from './components';
+import authService from './appwrite/auth';
 
 function App(){
 
-    const [loading , setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -24,10 +22,9 @@ function App(){
       .finally(() => setLoading(false))
     },[])
 
-
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
-      <div className='w-full block'>
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-200 border shadow-md shadow-black '>
+      <div className='w-full'>
         <Header/>
            <main>
              <Outlet/>
@@ -35,7 +32,11 @@ function App(){
         <Footer/>
       </div>
     </div>
-  ) : null
+  ) : (
+    <div className='flex justify-center items-center h-screen'>
+       <div className='animate-spin rounded-full h-24 w-24 border-t-4 border-b-4 border-blue-500'></div>
+     </div>
+  )
 }
 
 export default App

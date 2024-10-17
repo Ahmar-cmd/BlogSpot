@@ -11,6 +11,11 @@ import PostForm from './Post-Form/PostForm'
 import AuthLayout from './AuthLayout'
 import Button from './Button'
 import Input from "./Input"
+import Home from '../pages/Home.jsx'
+import AddPost from '../pages/AddPost'
+import EditPost from '../pages/EditPost'
+import AllPosts from '../pages/AllPost'
+import Post from '../pages/Post.jsx'
 
 export { Header ,
          Footer ,
@@ -24,5 +29,10 @@ export { Header ,
          RTE,
          PostCard,
          PostForm,
-         AuthLayout
+         AuthLayout,
+         Home,
+         AddPost,
+         EditPost,
+         AllPosts,
+         Post
         }
