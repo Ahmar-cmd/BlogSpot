@@ -51,7 +51,7 @@ function Header() {
           <div className="block md:hidden">
             <button className="text-white focus:outline-none">
               <img
-                src={toggle ? "/src/assets/close.svg" : "/src/assets/menu.svg"}
+                src={toggle ? "/close.svg" : "/menu.svg"}
                 alt="Menu"
                 className="object-contain cursor-pointer"
                 onClick={() => setToggle((prev) => !prev)}
